@@ -30,4 +30,23 @@ var addRounding = document.getElementById("add-rounding");
 
 var article = document.getElementsByClassName("article-section");
 //above always returns an array
+console.log(output);
 
+//add listeners
+//need a for loop
+// article.addEventListener("click", function() {
+//   output.innerHtml="You clicked on the "
+// });
+pageTitle.addEventListener("mouseover", function() {
+  output.innerHTML = "You moved your mouse ovr the header.";
+
+});
+
+//add mouseover
+colorButton.addEventListener("mouseover", function() {
+
+});
+//add mouseout
+
+
+//
