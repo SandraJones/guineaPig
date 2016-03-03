@@ -37,16 +37,18 @@ console.log(output);
 // article.addEventListener("click", function() {
 //   output.innerHtml="You clicked on the "
 // });
+//add mouseover
 pageTitle.addEventListener("mouseover", function() {
   output.innerHTML = "You moved your mouse ovr the header.";
-
 });
 
-//add mouseover
-colorButton.addEventListener("mouseover", function() {
+pageTitle.addEventListener("mouseout", function() {
+  output.innerHTML = "You left me!!";
+});
 
+colorButton.addEventListener("click", function() {
+	guineaPig.classList.toggle("blue");
 });
 //add mouseout
 
 
-//
