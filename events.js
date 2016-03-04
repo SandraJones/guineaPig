@@ -27,28 +27,53 @@ var makeLarge = document.getElementById("make-large");
 var addBorder = document.getElementById("add-border");
 var addRounding = document.getElementById("add-rounding");
 
-
 var article = document.getElementsByClassName("article-section");
 //above always returns an array
+
+//setting up this array because I don't know how to loop thru above and know which section you are on
+var sectionArray = ["Introduction", "Body", "Section 1", "Section 2", "Section 3", "Conclusion"];
 console.log(output);
 
-//add listeners
-//need a for loop
-// article.addEventListener("click", function() {
-//   output.innerHtml="You clicked on the "
+
+//must be a more efficient way to do this
+function sectionIdentifier() { 
+	for (var i = 0; i < sectionArray.length; i++) {
+		// return sectionArray[i];
+		if (i=0) {
+			 output.innerHTML="You clicked on the " + sectionArray[0] +  " section.";
+		}  else if (i=1) {
+			   output.innerHTML="You clicked on the " + sectionArray[1] +  " section.";
+		   } else if (i=2) {
+           output.innerHTML="You clicked on the " + sectionArray[2] +  " section.";
+		     } else if (i=3) {
+             output.innerHTML="You clicked on the " + sectionArray[3] +  " section.";
+		       } else if (i=4) {
+		       	   output.innerHTML="You clicked on the " + sectionArray[4] +  " section.";
+		         } else if (i=5) {
+		         	   output.innerHTML="You clicked on the " + sectionArray[5] +  " section.";
+		           }
+		console.log("sectionArray name",sectionArray[i]);
+	}
+}
+
+// article.addEventListener("click", sectionIdentifier() {
+// });
+// article.addEventListener("click", sectionIdentifier() {  
 // });
 //add mouseover
 pageTitle.addEventListener("mouseover", function() {
-  output.innerHTML = "You moved your mouse ovr the header.";
+  output.innerHTML = "You moved your mouse over the header.";
 });
-
+//add mouseout
 pageTitle.addEventListener("mouseout", function() {
   output.innerHTML = "You left me!!";
 });
-
+//click on add color button and get blue text
 colorButton.addEventListener("click", function() {
 	guineaPig.classList.toggle("blue");
 });
-//add mouseout
+
+//mirroring function
+//as keys are pressed output them in a field 
 
 
