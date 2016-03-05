@@ -38,11 +38,15 @@ function sectionClicking(MouseEvent) {
 	output.innerHTML = "You clicked on the " + elementText + " section.";
 	}
 
-
-
+for (var i = 0;  i < article.length; i++) {
+	 article[0].classList.add("bold");
+	 article[article.length-1].classList.add("ital");
+   console.log("article", article);
+}
 //adding eventListener for the sections
 for (var i=0; i < article.length; i++) {
   article.item(i).addEventListener("click", sectionClicking);
+  console.log("article", article);
 } 
 //add mouseover
 pageTitle.addEventListener("mouseover", function() {
@@ -73,4 +77,15 @@ addRounding.addEventListener("click", function() {
 keyPress.addEventListener("key-up", function(event) {
 	output.innerHTML = event.target.value;
 })
-//
+//toggle combines add and remove in one move
+
+
+//class
+//article-section
+
+//css
+//bold and italic
+
+//element
+//button
+
