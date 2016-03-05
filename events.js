@@ -28,40 +28,25 @@ var addBorder = document.getElementById("add-border");
 var addRounding = document.getElementById("add-rounding");
 
 var article = document.getElementsByClassName("article-section");
-//above always returns an array
-
-//setting up this array because I don't know how to loop thru above and know which section you are on
-var sectionArray = ["Introduction", "Body", "Section 1", "Section 2", "Section 3", "Conclusion"];
-console.log(output);
+//above always returns an array called a DOM list
 
 
-//must be a more efficient way to do this
-function sectionIdentifier() { 
-	for (var i = 0; i < sectionArray.length; i++) {
-		// return sectionArray[i];
-		if (i=0) {
-			 output.innerHTML="You clicked on the " + sectionArray[0] +  " section.";
-		}  else if (i=1) {
-			   output.innerHTML="You clicked on the " + sectionArray[1] +  " section.";
-		   } else if (i=2) {
-           output.innerHTML="You clicked on the " + sectionArray[2] +  " section.";
-		     } else if (i=3) {
-             output.innerHTML="You clicked on the " + sectionArray[3] +  " section.";
-		       } else if (i=4) {
-		       	   output.innerHTML="You clicked on the " + sectionArray[4] +  " section.";
-		         } else if (i=5) {
-		         	   output.innerHTML="You clicked on the " + sectionArray[5] +  " section.";
-		           }
-		console.log("sectionArray name",sectionArray[i]);
+
+function sectionClicking(MouseEvent) {
+	var elementText = MouseEvent.target.innerHTML;
+	console.log(MouseEvent);
+	output.innerHTML = "You clicked on the " + elementText + " section.";
 	}
-}
 
-// article.addEventListener("click", sectionIdentifier() {
-// });
-// article.addEventListener("click", sectionIdentifier() {  
-// });
+
+
+//adding eventListener for the sections
+for (var i=0; i < article.length; i++) {
+  article.item(i).addEventListener("click", sectionClicking);
+} 
 //add mouseover
 pageTitle.addEventListener("mouseover", function() {
+	console.log("mouseover");
   output.innerHTML = "You moved your mouse over the header.";
 });
 //add mouseout
@@ -72,8 +57,20 @@ pageTitle.addEventListener("mouseout", function() {
 colorButton.addEventListener("click", function() {
 	guineaPig.classList.toggle("blue");
 });
-
-//mirroring function
+//click on hulkify button and make font larger
+makeLarge.addEventListener("click", function() {
+	guineaPig.classList.toggle("large");
+});
+//capture text with a border 
+addBorder.addEventListener("click", function() {
+  guineaPig.classList.toggle("border")
+});
+//add Rounding to the border
+addRounding.addEventListener("click", function() {
+	guineaPig.classList.toggle("round")
+});
 //as keys are pressed output them in a field 
-
-
+keyPress.addEventListener("key-up", function(event) {
+	output.innerHTML = event.target.value;
+})
+//
